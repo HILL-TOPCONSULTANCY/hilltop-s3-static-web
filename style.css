@@ -1,0 +1,44 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0e8e8;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #8a2be2;
+}
+
+#dynamicTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d63384;
+    margin: 20px 0;
+}
+
+.image-gallery {
+    margin: 20px 0;
+}
+
+.image-gallery img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+.poem {
+    background-color: #fff0f5;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    color: #333;
+}
