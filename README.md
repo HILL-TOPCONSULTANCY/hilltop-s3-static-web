@@ -125,15 +125,22 @@ If you have a custom domain and wish to point it to your S3 website:
 1. Navigate to **Route 53** and create a new hosted zone for your domain.
 2. Add an **A record** or **CNAME record** pointing to your S3 website endpoint.
 
-## Important Notes
+### Difference Between Amazon S3 and Amazon EBS
 
-- S3 static websites only support HTTP, not HTTPS. For HTTPS, you can use CloudFront as a Content Delivery Network (CDN) in combination with your S3 bucket.
-- Make sure you understand the security implications of making your bucket publicly accessible. If you're concerned about unauthorized access, consider limiting public access to only the necessary files.
+**Amazon S3 (Simple Storage Service)** and **Amazon EBS (Elastic Block Store)** are both storage services offered by AWS, but they serve different use cases and have distinct characteristics. Below is a comparison of the two:
 
-## Troubleshooting
-
-- Ensure the **Bucket Policy** is correctly applied to allow public access.
-- Double-check that your **index document** matches the file name uploaded to the S3 bucket.
-- If using a custom domain, ensure DNS settings are configured correctly in Route 53.
-
+| **Feature**           | **Amazon S3**                                  | **Amazon EBS**                                 |
+|-----------------------|------------------------------------------------|------------------------------------------------|
+| **Storage Type**       | Object storage                                | Block storage                                 |
+| **Use Case**           | Storing unstructured data such as backups, media, documents, logs, etc. | Attaching storage to an EC2 instance for use as a hard drive (e.g., for operating systems, databases, and applications). |
+| **Access Method**      | Access via HTTP/HTTPS with REST API            | Access via an EC2 instance as mounted storage (similar to a disk) using the file system or raw block device access. |
+| **Durability**         | Extremely high durability (99.999999999% or 11 nines). Data is replicated across multiple Availability Zones. | High durability within a single Availability Zone, but can be backed up to S3 using snapshots for cross-AZ protection. |
+| **Performance**        | Best suited for large-scale data retrieval with high throughput. | Designed for low-latency, high-performance access, like a physical hard disk. |
+| **Scalability**        | Automatically scales to virtually unlimited storage. | Capacity must be provisioned and expanded manually as needed. |
+| **Pricing Model**      | Pay for the amount of storage used, with additional costs for data retrieval and access frequency. | Pay for the storage provisioned (even if not fully used), with performance-based pricing for storage types. |
+| **Data Access Pattern**| Data is typically accessed in chunks (objects), not partial or random access. | Supports random read/write operations and is typically used for OS or application storage. |
+| **Use Cases**          | Static websites, backups, media storage, data lakes, big data analytics, logging. | Running databases, hosting OS and applications, storing frequently modified data. |
+| **Availability**       | Available across multiple regions and AZs by default. | Restricted to a single AZ, though snapshots can be used to restore in other AZs. |
+| **Storage Classes**    | Multiple storage classes (Standard, Intelligent-Tiering, Glacier, etc.) for cost-optimization based on access frequency. | Different volume types (General Purpose SSD, Provisioned IOPS SSD, Throughput Optimized HDD, Cold HDD) based on performance needs. |
+| **Backup & Recovery**  | Built-in redundancy across regions/AZs; versioning and lifecycle policies are available. | Snapshots can be created manually and stored in S3, allowing backups to persist beyond a single AZ. |
 
