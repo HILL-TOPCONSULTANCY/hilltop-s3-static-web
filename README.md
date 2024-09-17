@@ -21,6 +21,7 @@ Key features of Amazon S3:
 3. **Access Control Lists (ACLs)**: ACLs are legacy methods for granting permissions on individual objects or buckets. ACLs define permissions at a more granular level but are generally considered less flexible than bucket policies and IAM policies.
 
 By configuring S3 policies, you can enforce data security, ensure proper access management, and define specific permissions that align with your business needs. These policies can also integrate with encryption standards, logging, and monitoring to ensure compliance with industry regulations.
+
 ---
 ### Introduction to S3 Storage Classes
 
