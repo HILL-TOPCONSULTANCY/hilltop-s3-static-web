@@ -1,4 +1,4 @@
-### Introduction to Amazon S3
+# Introduction to Amazon S3
 
 **Amazon Simple Storage Service (Amazon S3)** is an object storage service that offers scalable, durable, and secure storage for any type of data. It is designed to store and retrieve large amounts of data from anywhere on the web, making it ideal for a wide variety of use cases, including backup and restore, archiving, big data analytics, and hosting static websites.
 
