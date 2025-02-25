@@ -44,9 +44,9 @@ An **object** is any file stored in a bucket.
 4. Click **"Upload"**.
 
 ---
-# **Amazon S3 Policies, Access Control, and Security: A Comprehensive Guide**
+# **Amazon S3 Policies, Access Control, and Security:**
 
-Amazon S3 provides robust access control mechanisms through **bucket policies**, **IAM policies**, **Access Control Lists (ACLs)**, and **S3 security features** like encryption and logging. This tutorial covers how to secure your S3 data effectively.
+Amazon S3 provides robust access control mechanisms through **bucket policies**, **IAM policies**, **Access Control Lists (ACLs)**, and **S3 security features** like encryption and logging.
 
 ---
 
@@ -186,10 +186,6 @@ ACLs allow fine-grained control over object access at the **object level**.
 4. Check **"Everyone" → "Read"**.
 5. Save.
 
-### **4.2. Using AWS CLI to Grant Read Access**
-```sh
-aws s3api put-object-acl --bucket my-bucket --key myfile.txt --acl public-read
-```
 **ACLs are useful for individual object permissions but should be used cautiously.**
 
 ---
@@ -323,7 +319,7 @@ Amazon S3 provides logging and monitoring using:
 2. Enable **Server Access Logging** and select a destination bucket.
 
 ---
-# **Amazon S3 Static Website Hosting: A Step-by-Step Tutorial**
+# **Amazon S3 Static Website Hosting:**
 
 Amazon S3 allows you to **host a static website** (HTML, CSS, JavaScript) without needing a web server. This is ideal for personal websites, portfolios, and simple applications.
 ---
